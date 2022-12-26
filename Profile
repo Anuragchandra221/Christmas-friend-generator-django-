@@ -1,0 +1,1 @@
+web: gunicorn xmas.wsgi --log-file -
