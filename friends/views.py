@@ -18,6 +18,7 @@ def home(request):
 @api_view(['GET'])
 def reset(request):
     friends = Friends.objects.all()
+    pair = Pair.objects.all().delete()
     for i in friends:
         i.selected = False
         i.hasAFriend = False
@@ -40,6 +41,8 @@ def random(request):
             
             friend2.hasAFriend = True
             friend2.save()
+            pair = Pair(name1=friend2, name2=friend)
+            pair.save()
             serializer = FriendSerializer(friend, many=False)
             return Response(serializer.data)
         else:
