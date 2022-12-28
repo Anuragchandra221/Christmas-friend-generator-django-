@@ -5,3 +5,4 @@ from .models import *
 admin.site.register(Room)
 admin.site.register(Friends)
 admin.site.register(Pair)
+admin.site.register(Feedback)

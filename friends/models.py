@@ -20,3 +20,9 @@ class Pair(models.Model):
 
     def __str__(self):
         return self.name1 + " and " + self.name2
+
+class Feedback(models.Model):
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content

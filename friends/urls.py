@@ -8,4 +8,5 @@ urlpatterns = [
     path('reset/', views.reset),
     path('search/<str:val>', views.search),
     path('count/', views.count),
+    path('feedback/', views.feedback),
 ]

@@ -25,6 +25,16 @@ def reset(request):
         i.save()
     return Response({"msg":"success"})
 
+@api_view(['POST', 'GET'])
+def feedback(request):
+    if request.method == 'POST':
+        feed = request.data['feedback']
+        feedback = Feedback(content=feed)
+        feedback.save()
+        return Response({"msg":"success"})
+    else:
+        return Response({"msg":"get request"})
+
 @api_view(['GET', 'POST'])
 def random(request):
     if request.method == 'POST':
